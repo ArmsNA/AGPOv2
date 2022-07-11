@@ -64,10 +64,10 @@ Input 8 to quit."
             .\LGPO.exe /t "$truePath\lgpoMachine.txt"}
         2{.\LGPO.exe /parse /u "$bPath\DomainSysvol\GPO\User\registry.pol" > lgpoUser.txt
             .\LGPO.exe /u "$truePath\lgpoUser.txt"}
-        3{.\LGPO.exe /parse /m "C:\Users\Rabbithole\Desktop\LGPO_30\Backup\DomainSysvol\GPO\Machine\registry.pol" > lgpoMachine.txt
-            .\LGPO.exe /parse /u "C:\Users\Rabbithole\Desktop\LGPO_30\Backup\DomainSysvol\GPO\User\registry.pol" > lgpoUser.txt
-            .\LGPO.exe /t "C:\Users\Rabbithole\Desktop\LGPO_30\lgpoMachine.txt"
-            .\LGPO.exe /u "C:\Users\Rabbithole\Desktop\LGPO_30\lgpoUser.txt"}
+        3{.\LGPO.exe /parse /m "$bPath\DomainSysvol\GPO\Machine\registry.pol" > lgpoMachine.txt
+            .\LGPO.exe /parse /u "bPath\DomainSysvol\GPO\User\registry.pol" > lgpoUser.txt
+            .\LGPO.exe /t "$truePath\lgpoMachine.txt"
+            .\LGPO.exe /u "$truePath\lgpoUser.txt"}
         4{for($i=1;$i -gt 0; $i++){
             $answer=Read-Host -Prompt "Provide a path to existing GPO Machine Settings: "
             if(Test-Path -Path $answer){
