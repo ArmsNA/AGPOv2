@@ -75,8 +75,8 @@ Input 8 to quit."
         4{for($i=1;$i -gt 0; $i++){
             $answer=Read-Host -Prompt "Provide a path to existing GPO Machine Settings: "
             if(Test-Path -Path $answer -Include '*.pol', '*.txt'){
-                if (!Test-Path -Path "$truePath\New"){mkdir "$truePath\New"}
-                if (!Test-Path -Path "$truePath\New\Machine"){mkdir "$truePath\New\Machine"}
+                if (!(Test-Path -Path "$truePath\New")){mkdir "$truePath\New"}
+                if (!(Test-Path -Path "$truePath\New\Machine")){mkdir "$truePath\New\Machine"}
                 if(Test-Path -Path $answer -Include '*.pol'){
                     .\LGPO.exe /parse /m $answer > lgpoMachine.txt
                     .\LGPO.exe /t "$truePath\lgpoMachine.txt"
@@ -97,8 +97,8 @@ Input 8 to quit."
         5{for($i=1;$i -gt 0; $i++){
             $answer=Read-Host -Prompt "Provide a path to existing GPO User Settings: "
             if(Test-Path -Path $answer -Include '*.pol', '*.txt'){
-                if (!Test-Path -Path "$truePath\New"){mkdir "$truePath\New"}
-                if (!Test-Path -Path "$truePath\New\User"){mkdir "$truePath\New\User"}
+                if (!(Test-Path -Path "$truePath\New")){mkdir "$truePath\New"}
+                if (!(Test-Path -Path "$truePath\New\User")){mkdir "$truePath\New\User"}
                 if(Test-Path -Path $answer -Include '*.pol'){
                     .\LGPO.exe /parse /u $answer > lgpoUser.txt
                     #Apply reg commands from txt
@@ -122,8 +122,8 @@ Input 8 to quit."
         6{for($i=1;$i -gt 0; $i++){
             $answer=Read-Host -Prompt "Provide a path to existing GPO Machine Settings: "
             if(Test-Path -Path $answer -Include '*.pol', '*.txt'){
-                if (!Test-Path -Path "$truePath\New"){mkdir "$truePath\New"}
-                if (!Test-Path -Path "$truePath\New\Machine"){mkdir "$truePath\New\Machine"}
+                if (!(Test-Path -Path "$truePath\New")){mkdir "$truePath\New"}
+                if (!(Test-Path -Path "$truePath\New\Machine")){mkdir "$truePath\New\Machine"}
                 if(Test-Path -Path $answer -Include '*.pol'){
                     .\LGPO.exe /parse /m $answer > lgpoMachine.txt
                     .\LGPO.exe /t "$truePath\lgpoMachine.txt"
@@ -144,8 +144,8 @@ Input 8 to quit."
         for($i=1;$i -gt 0; $i++){
             $answerTwo=Read-Host -Prompt "Provide a path to existing GPO User Settings: "
             if(Test-Path -Path $answerTwo -Include '*.pol', '*.txt'){
-                if (!Test-Path -Path "$truePath\New"){mkdir "$truePath\New"}
-                if (!Test-Path -Path "$truePath\New\User"){mkdir "$truePath\New\User"}
+                if (!(Test-Path -Path "$truePath\New")){mkdir "$truePath\New"}
+                if (!(Test-Path -Path "$truePath\New\User")){mkdir "$truePath\New\User"}
                 if(Test-Path -Path $answerTwo -Include '*.pol'){
                     .\LGPO.exe /parse /u $answerTwo > lgpoUser.txt
                     #Apply reg commands from txt
